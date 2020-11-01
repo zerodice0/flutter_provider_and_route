@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_route_example/problem/problem_provider.dart';
 import 'package:provider_route_example/problem/problem_sub.dart';
+
+import '../provider/counter_provider.dart';
 
 class ProblemMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<ProblemProvider>(context);
+    var provider = Provider.of<CounterProvider>(context);
 
     return Scaffold(
       appBar: AppBar(

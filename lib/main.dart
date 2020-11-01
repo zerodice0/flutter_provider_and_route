@@ -4,7 +4,9 @@ import 'problem/problem_page.dart';
 import 'solve/solve_page.dart';
 
 void main() {
-  runApp(MainApp());
+  runApp(
+    MainApp(),
+  );
 }
 
 class MainApp extends StatelessWidget {

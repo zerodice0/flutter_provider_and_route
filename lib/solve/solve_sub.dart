@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'solve_provider.dart';
+import '../provider/counter_provider.dart';
 
 class SolveSub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<SolveProvider>(context);
+    var provider = Provider.of<CounterProvider>(context);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
