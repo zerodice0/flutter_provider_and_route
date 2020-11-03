@@ -46,3 +46,8 @@ class SolvePage extends StatelessWidget {
 ~~~
 
 SolvePage에서는 ProblemPage와는 달리 ChangeNotifierProvider를 호출하면서 child로 MaterialApp을 생성하는데, 이렇게 되면 여기서 생성한 MaterialApp의 BuildContext에 SolveProvider가 성생된다. 이후 SolveMain에서 Navigator.push를 사용해 새로운 화면을 출력하더라도, BuildContext 내에는 SolveProvider가 존재하므로 에러가 출력되지 않는다.
+
+-----
+위에서 MaterialApp을 사용해 route를 새로 만들어서, Provider의 route를 지정해주는 것에는 약간의 문제가 있다. 이렇게 MaterialApp으로 새로 생성된 route는, 최상단의 route와는 별개이다. 즉, Scope가 다르므로 NamedRoute를 사용하기 어렵다던가하는 문제가 따라오게 된다.
+
+새로 생성된 route 내에서 최상단의 route의 설정을 공유받아 사용하는 방법도 있을수는 있겠지만, 이 경우 새로운 route에서 이동할 때 문제가 발생할 가능성이 있어보여 바람직하진 않아보인다. 기본적으로 D.B.같은 곳에 데이터를 저장해놓는다면, 굳이 여러 화면간에 Provider를 공유해야할 필요가 있는지 생각해볼 필요가 있다.
